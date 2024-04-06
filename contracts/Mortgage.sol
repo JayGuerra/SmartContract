@@ -16,8 +16,8 @@ contract Mortgage {
     event PaymentMade(address borrower, uint amount, uint balanceDue);
 
     // Constructor to set the lender at contract deployment
-    constructor() public {
-        lender = msg.sender; // The deployer of the contract is the lender
+    constructor() {
+        lender = payable(msg.sender); // The deployer of the contract is the lender
     }
 
     // Initialize loan terms
