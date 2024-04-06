@@ -4,11 +4,11 @@ pragma solidity >=0.4.22 <0.9.0;
 contract Mortgage {
     address payable public lender;
     address payable public borrower;
-    uint public loanAmount;
-    uint public interestRate; // Assuming this is an annual rate, could be represented as a percentage times 100 (e.g., 5% as 500 to allow for decimal percentages)
-    uint public loanDuration; // In months, for example
-    uint public monthlyPayment;
-    uint public balanceDue;
+    uint256 public loanAmount;
+    uint256 public interestRate; // Assuming this is an annual rate, could be represented as a percentage times 100 (e.g., 5% as 500 to allow for decimal percentages)
+    uint256 public loanDuration; // In months, for example
+    uint256 public monthlyPayment;
+    uint256 public balanceDue;
     bool public loanActive = false;
 
     // Event declarations (optional but recommended for transparency)

@@ -6,13 +6,13 @@ contract("Mortgage", accounts => {
 
   // "beforeEach" runs before each "it" test block is executed
   beforeEach(async () => {
-    // Deploy a new Mortgage contract before each test
-    instance = await Mortgage.new();
+    instance = await Mortgage.new({ from: accounts[0], gas: 6000000});
   });
 
   // Example test
   it("should initialize the loan", async () => {
     // Setup
+    let instance = await Mortgage.new({ from: accounts[0], gas: 6000000 });
     const lender = accounts[0];
     const borrower = accounts[1];
     const amount = web3.utils.toBN(web3.utils.toWei('100', 'ether'));
